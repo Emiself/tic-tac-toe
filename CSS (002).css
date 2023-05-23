@@ -1,0 +1,247 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Radio Canada', sans-serif;
+}
+
+body {
+  background-color: white;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 15px;
+}
+
+.header h1 {
+  text-align: center;
+}
+
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 35px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn {
+  border: 1px solid black;
+  border-radius: 5px;
+  height: 100px; /* Increase the height to make the box taller */
+  width: 100px; /* Increase the width to make the box wider */
+  text-align: center;
+  font-size: 50px;
+  font-weight: 300; /* Adjust the font weight to make the symbols thinner */
+  transition: all 0.2s ease-in-out;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), inset 0 0 10px rgba(0, 0, 0, 0.1); /* Add box shadow for shading */
+}
+
+.btn:hover {
+  cursor: pointer;
+  background-color: #D4D4D4;
+}
+
+.btn:disabled {
+  color: black;
+  cursor: no-drop;
+}
+
+.result {
+  text-align: center;
+}
+
+    .result {
+    font-weight: bold; /* Make the text bold */
+    color: red; /* Set the text color to red */
+      font-size: 30px; /* Increase the font size for "Player X Turn" */
+    }
+
+.reset {
+  text-align: center;
+}
+
+#reset {
+  border: 1px solid black;
+  cursor: pointer;
+  color: black;
+  background-color: white;
+  padding: 25px 200px; /* Adjust the padding to maintain the button size */
+  font-size: 30px;
+  margin: -380px auto 0; /* Center horizontally and move the button higher */
+  display: block; /* Make the button a block element */
+  transition: all 0.1s ease-in-out;
+  position: relative; /* Add position relative */
+  z-index: 1; /* Set a higher z-index to bring the button in front */
+  animation: fadeIn 0.5s ease-in-out;
+  opacity: 0;
+  transform: scale(0);
+  animation-fill-mode: forwards;
+  animation-delay: 1s;
+}
+
+.win-line-x {
+  background-color: #FFEF00;
+}
+
+.win-line-x:hover {
+  background-color: #FFAE42; /* Change the hover color for X */
+}
+
+.win-line-o {
+  background-color: #FFEF00;
+}
+
+.win-line-o:hover {
+  background-color: #FFAE42; /* Change the hover color for O */
+}
+
+.btn {
+  border: 1px solid black;
+  border-radius: 0px;
+  height: 150px; /* Increase the height to make the box taller */
+  width: 150px; /* Increase the width to make the box wider */
+  text-align: center;
+  font-size: 100px; /* Increase the font size to make the X and O bigger */
+  font-weight: thin; /* Adjust the font weight to make the symbols thinner */
+  transition: all 0.2s ease-in-out;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), inset 0 0 10px rgba(0, 0, 0, 0.1); /* Add box shadow for shading */
+  outline: none; /* Remove the outline border */
+}
+
+.win-line {
+  position: absolute;
+  height: 10px;
+  width: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+.win-line-x {
+  background-color: #FFEF00;
+}
+
+.win-line-o
+{
+  background-color: #FFEF00;
+}
+
+.win-line-o:hover {
+  background-color: #FFAE42; /* Change the hover color for O */
+}
+
+.win-line.horizontal {
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  background-color: #FFEF00;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), inset 0 0 10px rgba(0, 0, 0, 0.1); /* Add shading to the horizontal line */
+}
+
+.win-line.vertical {
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  transform: translateX(-50%);
+  background-color: #FFEF00;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), inset 0 0 10px rgba(0, 0, 0, 0.1); /* Add shading to the vertical line */
+}
+
+.win-line.diagonal {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #FFEF00;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), inset 0 0 10px rgba(0, 0, 0, 0.1); /* Add shading to the diagonal line */
+}
+
+.animate-win-line {
+  animation-name: win-line-grow;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes win-line-grow {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+nav {
+  background-color: #333;
+  color: #fff;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline-block;
+}
+
+nav ul li a {
+  display: block;
+  padding: 10px 20px;
+  color: #fff;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  background-color: #276221;
+}
+
+    body {
+      background-color: #F1F1F1;
+    }
+
+#reset:hover {
+  background-color: orange;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.box {
+  /* Your box styles here */
+  animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

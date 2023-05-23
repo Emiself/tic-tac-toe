@@ -1,0 +1,206 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="shortcut icon" type="x-icon" href="yespic.png">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=1200, initial-scale=0.5">
+  <title>Tic Tac Toe</title>
+  <link rel="stylesheet" href="CSS (020).css">
+  <style>
+    /* Add your CSS styles here */
+    .dropdown {
+      display: none;
+    }
+
+    .ads-container {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .ads-container {
+      position: fixed;
+      top: 120px;
+      right: 0;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-start;
+      background-color: transparent; /* Add transparent background */
+      z-index: -1; /* Adjust z-index to position behind the game */
+    }
+
+    .left-ads-container {
+      position: fixed;
+      top: 120px;
+      left: 0;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      background-color: transparent; /* Add transparent background */
+      z-index: -1; /* Adjust z-index to position behind the game */
+    }
+
+    .btn {
+      color: black; /* Set the text color to black */
+    }
+
+.scoreboard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+  font-size: 25px;
+  color: green;
+  font-weight: bold;
+  background-color: #87CEFA;
+  padding: 10px;
+  width: 480px; /* Adjust the width as per your preference */
+}
+
+    .scoreboard p {
+      margin: 5px 52px;
+    }
+
+.scoreboard span {
+  color: green; /* Set the color to green */
+  font-weight: bold; /* Make the text bold */
+}
+
+.result {
+  font-size: 30px; /* Increase the font size for "Player X Turn" */
+  color: red; /* Set the text color to red */
+  font-weight: bold; /* Make the text bold */
+  background-color: yellow; /* Add background color */
+  padding: 5px 10px; /* Add padding for better visibility */
+  border-radius: 5px; /* Add border radius for rounded corners */
+  max-width: 420px; /* Set the maximum width */
+  margin: 0 auto; /* Center horizontally */
+  display: flex; /* Use flexbox */
+  justify-content: center; /* Center horizontally */
+}
+
+    nav {
+      background-color: green; /* Set the navbar background color to green */
+    }
+
+  </style>
+</head>
+
+<body>
+<nav>
+  <ul>
+    <li><a href="#" onclick="toggleHomeDropdown()">Now you are playing against a Computer :</a>
+      <ul class="dropdown home-dropdown">
+        <li><a href="HTML (001).html">OR you might like to play against a human :</a></li>
+      </ul>
+    </li>
+    <li><a href="#" onclick="toggleAboutDropdown()">Now the player is playing as "X" and the Computer is playing as "O" :</a>
+      <ul class="dropdown about-dropdown">
+        <li><a href="HTML (010).html">OR the player will play as "O" and the Computer will play as "X" :</a></li>
+      </ul>
+    </li>
+    <li><a href="#" onclick="toggleMoreDropdown()">Now the Computer is doing it's first move before the player :</a>
+      <ul class="dropdown more-dropdown">
+        <li><a href="HTML (015).html">OR let the player do the first move before the Computer :</a></li>
+      </ul>
+    </li>
+    <li><a href="#" onclick="toggleDifficultyDropdown()">The difficulty Level is now "Impossible" :</a>
+      <ul class="dropdown difficulty-dropdown">
+        <li><a href="HTML (020).html">OR play in "Impossible" mode :</a></li>
+        <li><a href="HTML (022).html">OR play in "Normal" mode :</a></li>
+        <li><a href="HTML (019).html">OR play in "Hard" mode :</a></li>
+        <li><a href="HTML (021).html">OR play in "Insane" mode :</a></li>
+        <li><a href="HTML (018).html">OR play in "Easy" mode :</a></li>
+      </ul>
+    </li>
+    <li><a href="#" onclick="toggleContactDropdown()">More games :</a>
+      <ul class="dropdown contact-dropdown">
+        <li><a href="#">Sorry, no more games are available for now :</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+  <div class="ads-container">
+    <!-- Insert your Google Ads code here -->
+
+
+  </div>
+
+  <div class="left-ads-container">
+    <!-- Insert your Google Ads code here -->
+
+
+  </div>
+
+
+  <div class="header">
+    <h1>Tic Tac Toe</h1>
+  </div>  
+ 
+  <p class="result">Player O Turn</p>
+ <div class="box restart-animation">
+  <div class="box">
+    <div class="row">
+      <input class="btn" type="text" readonly>
+      <input class="btn" type="text" readonly>
+      <input class="btn" type="text" readonly>
+    </div>
+    <div class="row">
+      <input class="btn" type="text" readonly>
+      <input class="btn" type="text" readonly>
+      <input class="btn" type="text" readonly>
+    </div>
+    <div class="row">
+      <input class="btn" type="text" readonly>
+      <input class="btn" type="text" readonly>
+      <input class="btn" type="text" readonly>
+    </div>
+  </div>
+</div>
+  <div class="scoreboard">
+    <p>X: <span id="score-x">0</span></p>
+    <p>O: <span id="score-o">0</span></p>
+    <p>TIE: <span id="score-tie">0</span></p>
+  </div>
+  
+  <div class="reset">
+    <button id="reset">Restart</button>
+  </div>
+  
+  <script src="JAVASCRIPT (020).js"></script>
+
+<script>
+
+    function toggleHomeDropdown() {
+      var dropdown = document.querySelector('.home-dropdown');
+      dropdown.style.display = (dropdown.style.display === 'block') ? 'none' : 'block';
+    }
+
+    function toggleAboutDropdown() {
+      var dropdown = document.querySelector('.about-dropdown');
+      dropdown.style.display = (dropdown.style.display === 'block') ? 'none' : 'block';
+    }
+
+    function toggleContactDropdown() {
+      var dropdown = document.querySelector('.contact-dropdown');
+      dropdown.style.display = (dropdown.style.display === 'block') ? 'none' : 'block';
+    }
+
+    function toggleDifficultyDropdown() {
+      var dropdown = document.querySelector('.difficulty-dropdown');
+      dropdown.style.display = (dropdown.style.display === 'block') ? 'none' : 'block';
+    }
+
+function toggleMoreDropdown() {
+  var dropdown = document.querySelector('.more-dropdown');
+  dropdown.style.display = (dropdown.style.display === 'block') ? 'none' : 'block';
+}
+  </script>
+
+</body>
+
+</html>
